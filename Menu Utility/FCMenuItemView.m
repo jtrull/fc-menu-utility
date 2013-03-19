@@ -85,12 +85,12 @@ static CGFloat const STATUS_ICON_ORIGIN_Y = 3.0;
 }
 
 - (void)menuWillOpen:(NSMenu *)aMenu {
-    [self setStatusItemActive:YES];
+    [self setStatusItemActive];
 }
 
 - (void)menuDidClose:(NSMenu *)aMenu {
     [aMenu setDelegate:nil];
-    [self setStatusItemActive:NO];
+    [self setStatusItemInactive];
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
@@ -122,7 +122,7 @@ static CGFloat const STATUS_ICON_ORIGIN_Y = 3.0;
 }
 
 - (NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender {
-    [self setStatusItemActive:YES];
+    [self setStatusItemActive];
     
     return NSDragOperationGeneric;
 }
@@ -156,24 +156,29 @@ static CGFloat const STATUS_ICON_ORIGIN_Y = 3.0;
 }
 
 - (void)draggingExited:(id<NSDraggingInfo>)sender {
-    [self setStatusItemActive:NO];
+    [self setStatusItemInactive];
 }
 
 - (void)concludeDragOperation:(id<NSDraggingInfo>)sender {
     // Blink menu item.
-    [self performSelector:@selector(setStatusItemActive:)
-               withObject:[NSNumber numberWithBool:NO]
-               afterDelay:0.0f];
-    [self performSelector:@selector(setStatusItemActive:)
-               withObject:[NSNumber numberWithBool:YES]
-               afterDelay:0.1];
-    [self performSelector:@selector(setStatusItemActive:)
-               withObject:[NSNumber numberWithBool:NO]
+    [self performSelector:@selector(setStatusItemInactive)
+               withObject:nil
+               afterDelay:0.1f];
+    [self performSelector:@selector(setStatusItemActive)
+               withObject:nil
                afterDelay:0.2f];
+    [self performSelector:@selector(setStatusItemInactive)
+               withObject:nil
+               afterDelay:0.3f];
 }
 
-- (void)setStatusItemActive:(BOOL)active {
-    isStatusItemActive = active;
+- (void)setStatusItemActive {
+    isStatusItemActive = YES;
+    [self setNeedsDisplay:YES];
+}
+
+- (void)setStatusItemInactive {
+    isStatusItemActive = NO;
     [self setNeedsDisplay:YES];
 }
 
