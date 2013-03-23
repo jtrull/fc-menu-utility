@@ -1,10 +1,13 @@
 #import "FCAppDelegate.h"
 #import "FCMenuItemView.h"
+#import <Sparkle/Sparkle.h>
 
 @implementation FCAppDelegate
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
-    
+    // Initialize Sparkle updater.
+    [SUUpdater sharedUpdater];
+
     NSStatusBar * statusBar = [NSStatusBar systemStatusBar];
     NSStatusItem * statusItem = [statusBar statusItemWithLength:NSSquareStatusItemLength];
     

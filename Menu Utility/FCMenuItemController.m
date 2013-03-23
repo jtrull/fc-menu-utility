@@ -1,5 +1,6 @@
 #import "FCMenuItemController.h"
 #import "IconLoader.h"
+#import <Sparkle/Sparkle.h>
 
 static NSString * const AppSupportDirectory = @"Menu Utility";
 static NSString * const LayoutPath          = @"Layout";
@@ -205,6 +206,11 @@ static NSString * appSupportPath() {
                                                action:@selector(openLayoutFolder:)
                                         keyEquivalent:@""];
     [item setTarget:self];
+    
+    item = [controlMenu addItemWithTitle:@"Check for Updates..."
+                                  action:@selector(checkForUpdates:)
+                           keyEquivalent:@""];
+    [item setTarget:[SUUpdater sharedUpdater]];
     
     [controlMenu addItem:[NSMenuItem separatorItem]];
     

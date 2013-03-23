@@ -32,5 +32,9 @@
 	<string>Copyright © 2013 Jonathan Trull. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>http://fcpost.com/apps/menu_utility/appcast.xml</string>
 </dict>
 </plist>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831FDCDE16FE645400AED851 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 831FDCDD16FE645400AED851 /* Sparkle.framework */; };
+		831FDCDF16FE64A000AED851 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 831FDCDD16FE645400AED851 /* Sparkle.framework */; };
 		833B965116B0CA4100C2A017 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833B965016B0CA4100C2A017 /* Cocoa.framework */; };
 		8359014916D30A5D0093F03A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8359013916D30A5D0093F03A /* Credits.rtf */; };
 		8359014A16D30A5D0093F03A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8359013B16D30A5D0093F03A /* InfoPlist.strings */; };
@@ -22,7 +24,21 @@
 		8359015C16D30A6F0093F03A /* version.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8359015716D30A6F0093F03A /* version.txt */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		831FDCDB16FE1E8B00AED851 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				831FDCDF16FE64A000AED851 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		831FDCDD16FE645400AED851 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		833B964C16B0CA4100C2A017 /* Menu Utility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Menu Utility.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		833B965016B0CA4100C2A017 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		833B965316B0CA4100C2A017 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -54,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				833B965116B0CA4100C2A017 /* Cocoa.framework in Frameworks */,
+				831FDCDE16FE645400AED851 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +98,7 @@
 		833B964F16B0CA4100C2A017 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				831FDCDD16FE645400AED851 /* Sparkle.framework */,
 				833B965016B0CA4100C2A017 /* Cocoa.framework */,
 				833B965216B0CA4100C2A017 /* Other Frameworks */,
 			);
@@ -147,6 +165,7 @@
 				833B964816B0CA4100C2A017 /* Sources */,
 				833B964916B0CA4100C2A017 /* Frameworks */,
 				833B964A16B0CA4100C2A017 /* Resources */,
+				831FDCDB16FE1E8B00AED851 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -295,6 +314,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Menu Utility/Menu Utility-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Menu Utility/Menu Utility-Info.plist";
@@ -307,6 +330,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Menu Utility/Menu Utility-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Menu Utility/Menu Utility-Info.plist";
