@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		83163C101711C7BE0004C35E /* fc_menu_icons.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = fc_menu_icons.icns; sourceTree = "<group>"; };
 		831FDCDD16FE645400AED851 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
-		833B964C16B0CA4100C2A017 /* Menu Utility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Menu Utility.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		833B964C16B0CA4100C2A017 /* FC Menu Utility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FC Menu Utility.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		833B965016B0CA4100C2A017 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		833B965316B0CA4100C2A017 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		833B965416B0CA4100C2A017 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -57,8 +57,8 @@
 		8359014316D30A5D0093F03A /* IconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconLoader.h; sourceTree = "<group>"; };
 		8359014416D30A5D0093F03A /* IconLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconLoader.m; sourceTree = "<group>"; };
 		8359014516D30A5D0093F03A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8359014616D30A5D0093F03A /* Menu Utility-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Menu Utility-Info.plist"; sourceTree = "<group>"; };
-		8359014716D30A5D0093F03A /* Menu Utility-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Menu Utility-Prefix.pch"; sourceTree = "<group>"; };
+		8359014616D30A5D0093F03A /* FC Menu Utility-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FC Menu Utility-Info.plist"; sourceTree = "<group>"; };
+		8359014716D30A5D0093F03A /* FC Menu Utility-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FC Menu Utility-Prefix.pch"; sourceTree = "<group>"; };
 		8359015216D30A6F0093F03A /* alt-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alt-icon.png"; sourceTree = "<group>"; };
 		8359015316D30A6F0093F03A /* alt-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alt-icon@2x.png"; sourceTree = "<group>"; };
 		8359015416D30A6F0093F03A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				8359015116D30A6F0093F03A /* Resources */,
-				8359013716D30A5D0093F03A /* Menu Utility */,
+				8359013716D30A5D0093F03A /* FC Menu Utility */,
 				833B964F16B0CA4100C2A017 /* Frameworks */,
 				833B964D16B0CA4100C2A017 /* Products */,
 			);
@@ -92,7 +92,7 @@
 		833B964D16B0CA4100C2A017 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				833B964C16B0CA4100C2A017 /* Menu Utility.app */,
+				833B964C16B0CA4100C2A017 /* FC Menu Utility.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,7 +117,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		8359013716D30A5D0093F03A /* Menu Utility */ = {
+		8359013716D30A5D0093F03A /* FC Menu Utility */ = {
 			isa = PBXGroup;
 			children = (
 				8359013916D30A5D0093F03A /* Credits.rtf */,
@@ -131,10 +131,10 @@
 				8359014316D30A5D0093F03A /* IconLoader.h */,
 				8359014416D30A5D0093F03A /* IconLoader.m */,
 				8359014516D30A5D0093F03A /* main.m */,
-				8359014616D30A5D0093F03A /* Menu Utility-Info.plist */,
-				8359014716D30A5D0093F03A /* Menu Utility-Prefix.pch */,
+				8359014616D30A5D0093F03A /* FC Menu Utility-Info.plist */,
+				8359014716D30A5D0093F03A /* FC Menu Utility-Prefix.pch */,
 			);
-			path = "Menu Utility";
+			path = "FC Menu Utility";
 			sourceTree = "<group>";
 		};
 		8359015116D30A6F0093F03A /* Resources */ = {
@@ -161,9 +161,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		833B964B16B0CA4100C2A017 /* Menu Utility */ = {
+		833B964B16B0CA4100C2A017 /* FC Menu Utility */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 833B966A16B0CA4200C2A017 /* Build configuration list for PBXNativeTarget "Menu Utility" */;
+			buildConfigurationList = 833B966A16B0CA4200C2A017 /* Build configuration list for PBXNativeTarget "FC Menu Utility" */;
 			buildPhases = (
 				833B964816B0CA4100C2A017 /* Sources */,
 				833B964916B0CA4100C2A017 /* Frameworks */,
@@ -174,9 +174,9 @@
 			);
 			dependencies = (
 			);
-			name = "Menu Utility";
+			name = "FC Menu Utility";
 			productName = "FC Menu Utility";
-			productReference = 833B964C16B0CA4100C2A017 /* Menu Utility.app */;
+			productReference = 833B964C16B0CA4100C2A017 /* FC Menu Utility.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -189,7 +189,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Jonathan Trull";
 			};
-			buildConfigurationList = 833B964616B0CA4100C2A017 /* Build configuration list for PBXProject "Menu Utility" */;
+			buildConfigurationList = 833B964616B0CA4100C2A017 /* Build configuration list for PBXProject "FC Menu Utility" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -201,7 +201,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				833B964B16B0CA4100C2A017 /* Menu Utility */,
+				833B964B16B0CA4100C2A017 /* FC Menu Utility */,
 			);
 		};
 /* End PBXProject section */
@@ -323,9 +323,9 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Menu Utility/Menu Utility-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/Menu Utility/Menu Utility-Info.plist";
-				PRODUCT_NAME = "Menu Utility";
+				GCC_PREFIX_HEADER = "FC Menu Utility/FC Menu Utility-Prefix.pch";
+				INFOPLIST_FILE = "FC Menu Utility/FC Menu Utility-Info.plist";
+				PRODUCT_NAME = "FC Menu Utility";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -339,9 +339,9 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Menu Utility/Menu Utility-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/Menu Utility/Menu Utility-Info.plist";
-				PRODUCT_NAME = "Menu Utility";
+				GCC_PREFIX_HEADER = "FC Menu Utility/FC Menu Utility-Prefix.pch";
+				INFOPLIST_FILE = "FC Menu Utility/FC Menu Utility-Info.plist";
+				PRODUCT_NAME = "FC Menu Utility";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -349,7 +349,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		833B964616B0CA4100C2A017 /* Build configuration list for PBXProject "Menu Utility" */ = {
+		833B964616B0CA4100C2A017 /* Build configuration list for PBXProject "FC Menu Utility" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				833B966816B0CA4200C2A017 /* Debug */,
@@ -358,7 +358,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		833B966A16B0CA4200C2A017 /* Build configuration list for PBXNativeTarget "Menu Utility" */ = {
+		833B966A16B0CA4200C2A017 /* Build configuration list for PBXNativeTarget "FC Menu Utility" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				833B966B16B0CA4200C2A017 /* Debug */,

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Menu Utility.xcodeproj">
+      location = "self:FC Menu Utility.xcodeproj">
    </FileRef>
 </Workspace>
