@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83163C111711C7BE0004C35E /* fc_menu_icons.icns in Resources */ = {isa = PBXBuildFile; fileRef = 83163C101711C7BE0004C35E /* fc_menu_icons.icns */; };
 		831FDCDE16FE645400AED851 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 831FDCDD16FE645400AED851 /* Sparkle.framework */; };
 		831FDCDF16FE64A000AED851 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 831FDCDD16FE645400AED851 /* Sparkle.framework */; };
 		833B965116B0CA4100C2A017 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833B965016B0CA4100C2A017 /* Cocoa.framework */; };
@@ -38,6 +39,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		83163C101711C7BE0004C35E /* fc_menu_icons.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = fc_menu_icons.icns; sourceTree = "<group>"; };
 		831FDCDD16FE645400AED851 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		833B964C16B0CA4100C2A017 /* Menu Utility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Menu Utility.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		833B965016B0CA4100C2A017 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -140,6 +142,7 @@
 			children = (
 				8359015216D30A6F0093F03A /* alt-icon.png */,
 				8359015316D30A6F0093F03A /* alt-icon@2x.png */,
+				83163C101711C7BE0004C35E /* fc_menu_icons.icns */,
 				8359015416D30A6F0093F03A /* icon.png */,
 				8359015516D30A6F0093F03A /* icon@2x.png */,
 				8359015616D30A6F0093F03A /* Settings */,
@@ -215,6 +218,7 @@
 				8359015A16D30A6F0093F03A /* icon.png in Resources */,
 				8359015B16D30A6F0093F03A /* icon@2x.png in Resources */,
 				8359015C16D30A6F0093F03A /* version.txt in Resources */,
+				83163C111711C7BE0004C35E /* fc_menu_icons.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
