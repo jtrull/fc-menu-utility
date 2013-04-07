@@ -1,22 +1,33 @@
 #import "FCMenuItemView.h"
-#import "IconLoader.h"
 
 static CGFloat const STATUS_ICON_ORIGIN_X = 6.0;
 static CGFloat const STATUS_ICON_ORIGIN_Y = 3.0;
+
+static NSString * const IconFile      = @"icon";
+static NSString * const AltIconFile   = @"alt-icon";
+static NSString * const IconExtension = @"png";
+
+NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
+    if ([aBundle respondsToSelector:@selector(imageForResource:)]) {
+        return [aBundle imageForResource:imageName];
+    } else {
+        NSString * imageFileName = [imageName stringByAppendingPathExtension:IconExtension];
+        return [[NSImage alloc] initWithContentsOfFile:
+                [[aBundle resourcePath] stringByAppendingPathComponent:imageFileName]];
+    }
+}
 
 @implementation FCMenuItemView
 
 - (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        defaultIcon = loadImageFromBundle([NSBundle mainBundle], IconFile);
-        defaultAltIcon = loadImageFromBundle([NSBundle mainBundle], AltIconFile);
+        icon = loadImageFromBundle([NSBundle mainBundle], IconFile);
+        altIcon = loadImageFromBundle([NSBundle mainBundle], AltIconFile);
         
         layoutMenu = [[NSMenu alloc] init];
         controlMenu = [[NSMenu alloc] init];
         isStatusItemActive = NO;
-        icon = nil;
-        altIcon = nil;
 
         launcherPath = nil;
     }
@@ -39,32 +50,6 @@ static CGFloat const STATUS_ICON_ORIGIN_Y = 3.0;
 
 - (NSMenu *)controlMenu {
     return controlMenu;
-}
-
-- (NSImage *)icon {
-    if (icon) {
-        return icon;
-    } else {
-        return defaultIcon;
-    }
-}
-
-- (void) setIcon:(NSImage *)anImage {
-    icon = anImage;
-    [self setNeedsDisplay:YES];
-}
-
-- (NSImage *)altIcon {
-    if (altIcon) {
-        return altIcon;
-    } else {
-        return defaultAltIcon;
-    }
-}
-
-- (void)setAltIcon:(NSImage *)anImage {
-    altIcon = anImage;
-    [self setNeedsDisplay:YES];
 }
 
 - (void)mouseDown:(NSEvent *)event {
@@ -97,9 +82,9 @@ static CGFloat const STATUS_ICON_ORIGIN_Y = 3.0;
     [statusItem drawStatusBarBackgroundInRect:[self bounds]
                                 withHighlight:isStatusItemActive];
 
-    NSImage * imageToDraw = [self icon];
+    NSImage * imageToDraw = icon;
     if (isStatusItemActive) {
-        imageToDraw = [self altIcon];
+        imageToDraw = altIcon;
     }
     
     [imageToDraw drawAtPoint:NSMakePoint(STATUS_ICON_ORIGIN_X, STATUS_ICON_ORIGIN_Y)

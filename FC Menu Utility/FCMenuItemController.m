@@ -1,5 +1,4 @@
 #import "FCMenuItemController.h"
-#import "IconLoader.h"
 #import <Sparkle/Sparkle.h>
 
 static NSString * const AppSupportDirectory = @"Menu Utility";
@@ -75,7 +74,6 @@ static NSString * appSupportPath() {
     NSBundle * settingsBundle = [NSBundle bundleWithPath:appSupportDir];
     
     [[view layoutMenu] removeAllItems];
-    [self updateIconWithSettingsBundle:settingsBundle];
     [self updateVersionWithSettingsBundle:settingsBundle];
     [self updateLauncherWithSettingsBundle:settingsBundle];
     
@@ -83,11 +81,6 @@ static NSString * appSupportPath() {
         [self updateMenu: [view layoutMenu]
           withLayoutPath: [[settingsBundle resourcePath] stringByAppendingPathComponent:LayoutPath]];
     }
-}
-
-- (void) updateIconWithSettingsBundle:(NSBundle *)aBundle {
-    [view setIcon:loadImageFromBundle(aBundle, IconFile)];
-    [view setAltIcon:loadImageFromBundle(aBundle, AltIconFile)];
 }
 
 - (void) updateVersionWithSettingsBundle:(NSBundle *)aBundle {
