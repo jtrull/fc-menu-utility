@@ -2,6 +2,5 @@
 #import "FCMenuItemDelegate.h"
 
 @interface FCAppDelegate : NSObject <NSApplicationDelegate> {
-    FCMenuItemDelegate * controller;
 }
 @end

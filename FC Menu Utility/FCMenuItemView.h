@@ -1,4 +1,5 @@
 #import <Cocoa/Cocoa.h>
+#import "FCMenuItemDelegate.h"
 
 @interface FCMenuItemView : NSView <NSMenuDelegate, NSDraggingDestination> {
     NSImage * icon;
@@ -10,11 +11,8 @@
     BOOL isStatusItemActive;
 }
 
-- (NSMenu *) layoutMenu;
-- (NSMenu *) controlMenu;
-- (NSStatusItem *) statusItem;
-- (void) setStatusItem:(NSStatusItem *)aStatusItem;
-- (NSString *) launcherPath;
-- (void) setLauncherPath:(NSString *)aLauncherPath;
+@property FCMenuItemDelegate * menuItemDelegate;
+
+- (void) setStatusItem:(NSStatusItem *) aStatusItem;
 
 @end

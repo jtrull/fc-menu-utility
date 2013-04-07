@@ -19,7 +19,9 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
 
 @implementation FCMenuItemView
 
-- (id)initWithFrame:(NSRect)frame {
+@synthesize menuItemDelegate;
+
+- (id) initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         icon = loadImageFromBundle([NSBundle mainBundle], IconFile);
@@ -30,55 +32,58 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
         isStatusItemActive = NO;
 
         launcherPath = nil;
+        statusItem = nil;
     }
 
     return self;
 }
 
-- (NSStatusItem *)statusItem {
-    return statusItem;
-}
-
-- (void) setStatusItem:(NSStatusItem *)aStatusItem {
+- (void) setStatusItem:(NSStatusItem *) aStatusItem {
     statusItem = aStatusItem;
     [statusItem setView:self];
 }
 
-- (NSMenu *)layoutMenu {
-    return layoutMenu;
-}
-
-- (NSMenu *)controlMenu {
-    return controlMenu;
-}
-
-- (void)mouseDown:(NSEvent *)event {
+- (void) mouseDown:(NSEvent *)event {
     if ([event modifierFlags] & NSAlternateKeyMask) {
-        [self popUpMenu:controlMenu];
+        [self popUpControlMenu];
     } else {
-        [self popUpMenu:layoutMenu];
+        [self popUpLayoutMenu];
     }
 }
 
-- (void)rightMouseDown:(NSEvent *)event {
+- (void) rightMouseDown:(NSEvent *)event {
+    [self popUpControlMenu];
+}
+
+- (void) popUpLayoutMenu {
+    if (menuItemDelegate && [[layoutMenu itemArray] count] == 0) {
+        [menuItemDelegate populateMainMenu:layoutMenu];
+    }
+    [self popUpMenu:layoutMenu];
+}
+
+- (void) popUpControlMenu {
+    if (menuItemDelegate && [[controlMenu itemArray] count] == 0) {
+        [menuItemDelegate populateControlMenu:controlMenu];
+    }
     [self popUpMenu:controlMenu];
 }
 
-- (void)popUpMenu:(NSMenu *)aMenu {
+- (void) popUpMenu:(NSMenu *)aMenu {
     [aMenu setDelegate:self];
     [statusItem popUpStatusItemMenu:aMenu];
 }
 
-- (void)menuWillOpen:(NSMenu *)aMenu {
+- (void) menuWillOpen:(NSMenu *)aMenu {
     [self setStatusItemActive];
 }
 
-- (void)menuDidClose:(NSMenu *)aMenu {
+- (void) menuDidClose:(NSMenu *)aMenu {
     [aMenu setDelegate:nil];
     [self setStatusItemInactive];
 }
 
-- (void)drawRect:(NSRect)dirtyRect {
+- (void) drawRect:(NSRect) dirtyRect {
     [statusItem drawStatusBarBackgroundInRect:[self bounds]
                                 withHighlight:isStatusItemActive];
 
@@ -93,11 +98,11 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
                     fraction:1.0];
 }
 
-- (NSString *)launcherPath {
+- (NSString *) launcherPath {
     return launcherPath;
 }
 
-- (void)setLauncherPath:(NSString *)aLauncherPath {
+- (void) setLauncherPath:(NSString *) aLauncherPath {
     launcherPath = aLauncherPath;
     if (launcherPath) {
         [self registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
@@ -106,17 +111,17 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
     }
 }
 
-- (NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender {
+- (NSDragOperation) draggingEntered:(id<NSDraggingInfo>) sender {
     [self setStatusItemActive];
     
     return NSDragOperationGeneric;
 }
 
-- (BOOL)prepareForDragOperation:(id<NSDraggingInfo>)sender {
+- (BOOL) prepareForDragOperation:(id<NSDraggingInfo>) sender {
     return YES;
 }
 
-- (BOOL)performDragOperation:(id<NSDraggingInfo>)sender {
+- (BOOL) performDragOperation:(id<NSDraggingInfo>) sender {
     NSPasteboard * pboard = [sender draggingPasteboard];
     
     if ([[pboard types] containsObject: NSFilenamesPboardType]) {
@@ -140,11 +145,11 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
     return YES;
 }
 
-- (void)draggingExited:(id<NSDraggingInfo>)sender {
+- (void) draggingExited:(id<NSDraggingInfo>) sender {
     [self setStatusItemInactive];
 }
 
-- (void)concludeDragOperation:(id<NSDraggingInfo>)sender {
+- (void) concludeDragOperation:(id<NSDraggingInfo>) sender {
     // Blink menu item.
     [self performSelector:@selector(setStatusItemInactive)
                withObject:nil
@@ -157,12 +162,12 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
                afterDelay:0.3f];
 }
 
-- (void)setStatusItemActive {
+- (void) setStatusItemActive {
     isStatusItemActive = YES;
     [self setNeedsDisplay:YES];
 }
 
-- (void)setStatusItemInactive {
+- (void) setStatusItemInactive {
     isStatusItemActive = NO;
     [self setNeedsDisplay:YES];
 }
