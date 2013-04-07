@@ -1,4 +1,4 @@
-#import "FCMenuItemController.h"
+#import "FCMenuItemDelegate.h"
 #import <Sparkle/Sparkle.h>
 
 static NSString * const AppSupportDirectory = @"Menu Utility";
@@ -13,7 +13,7 @@ static void FSEventCallback(ConstFSEventStreamRef streamRef,
                             void *eventPaths,
                             const FSEventStreamEventFlags eventFlags[],
                             const FSEventStreamEventId eventIds[]) {
-    FCMenuItemController * me = (__bridge FCMenuItemController *) clientCallBackInfo;
+    FCMenuItemDelegate * me = (__bridge FCMenuItemDelegate *) clientCallBackInfo;
     [me updateStatusItem];
 }
 
@@ -28,7 +28,7 @@ static NSString * appSupportPath() {
     return [[appSupportUrl path] stringByAppendingPathComponent:AppSupportDirectory];
 }
 
-@implementation FCMenuItemController
+@implementation FCMenuItemDelegate
 - (id) initWithMenuItemView:(FCMenuItemView *)aView {
     if (self = [super init]) {
         view = aView;

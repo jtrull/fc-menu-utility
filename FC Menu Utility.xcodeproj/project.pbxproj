@@ -14,7 +14,7 @@
 		8359014916D30A5D0093F03A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8359013916D30A5D0093F03A /* Credits.rtf */; };
 		8359014A16D30A5D0093F03A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8359013B16D30A5D0093F03A /* InfoPlist.strings */; };
 		8359014B16D30A5D0093F03A /* FCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8359013E16D30A5D0093F03A /* FCAppDelegate.m */; };
-		8359014C16D30A5D0093F03A /* FCMenuItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8359014016D30A5D0093F03A /* FCMenuItemController.m */; };
+		8359014C16D30A5D0093F03A /* FCMenuItemDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8359014016D30A5D0093F03A /* FCMenuItemDelegate.m */; };
 		8359014D16D30A5D0093F03A /* FCMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8359014216D30A5D0093F03A /* FCMenuItemView.m */; };
 		8359014F16D30A5D0093F03A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8359014516D30A5D0093F03A /* main.m */; };
 		8359015816D30A6F0093F03A /* alt-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8359015216D30A6F0093F03A /* alt-icon.png */; };
@@ -48,8 +48,8 @@
 		8359013C16D30A5D0093F03A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8359013D16D30A5D0093F03A /* FCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCAppDelegate.h; sourceTree = "<group>"; };
 		8359013E16D30A5D0093F03A /* FCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCAppDelegate.m; sourceTree = "<group>"; };
-		8359013F16D30A5D0093F03A /* FCMenuItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCMenuItemController.h; sourceTree = "<group>"; };
-		8359014016D30A5D0093F03A /* FCMenuItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCMenuItemController.m; sourceTree = "<group>"; };
+		8359013F16D30A5D0093F03A /* FCMenuItemDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCMenuItemDelegate.h; sourceTree = "<group>"; };
+		8359014016D30A5D0093F03A /* FCMenuItemDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCMenuItemDelegate.m; sourceTree = "<group>"; };
 		8359014116D30A5D0093F03A /* FCMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCMenuItemView.h; sourceTree = "<group>"; };
 		8359014216D30A5D0093F03A /* FCMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCMenuItemView.m; sourceTree = "<group>"; };
 		8359014516D30A5D0093F03A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -119,8 +119,8 @@
 				8359013B16D30A5D0093F03A /* InfoPlist.strings */,
 				8359013D16D30A5D0093F03A /* FCAppDelegate.h */,
 				8359013E16D30A5D0093F03A /* FCAppDelegate.m */,
-				8359013F16D30A5D0093F03A /* FCMenuItemController.h */,
-				8359014016D30A5D0093F03A /* FCMenuItemController.m */,
+				8359013F16D30A5D0093F03A /* FCMenuItemDelegate.h */,
+				8359014016D30A5D0093F03A /* FCMenuItemDelegate.m */,
 				8359014116D30A5D0093F03A /* FCMenuItemView.h */,
 				8359014216D30A5D0093F03A /* FCMenuItemView.m */,
 				8359014516D30A5D0093F03A /* main.m */,
@@ -213,7 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8359014B16D30A5D0093F03A /* FCAppDelegate.m in Sources */,
-				8359014C16D30A5D0093F03A /* FCMenuItemController.m in Sources */,
+				8359014C16D30A5D0093F03A /* FCMenuItemDelegate.m in Sources */,
 				8359014D16D30A5D0093F03A /* FCMenuItemView.m in Sources */,
 				8359014F16D30A5D0093F03A /* main.m in Sources */,
 			);

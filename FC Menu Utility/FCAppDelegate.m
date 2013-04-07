@@ -14,7 +14,7 @@
     FCMenuItemView * view = [[FCMenuItemView alloc] init];
     [view setStatusItem:statusItem];
 
-    controller = [[FCMenuItemController alloc] initWithMenuItemView:view];
+    controller = [[FCMenuItemDelegate alloc] initWithMenuItemView:view];
     [controller start];
 }
 

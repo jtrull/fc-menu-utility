@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "FCMenuItemView.h"
 
-@interface FCMenuItemController : NSObject
+@interface FCMenuItemDelegate : NSObject
 {
     FCMenuItemView * view;
     FSEventStreamRef stream;

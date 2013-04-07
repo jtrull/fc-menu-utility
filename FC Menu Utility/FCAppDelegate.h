@@ -1,7 +1,7 @@
 #import <Cocoa/Cocoa.h>
-#import "FCMenuItemController.h"
+#import "FCMenuItemDelegate.h"
 
 @interface FCAppDelegate : NSObject <NSApplicationDelegate> {
-    FCMenuItemController * controller;
+    FCMenuItemDelegate * controller;
 }
 @end
