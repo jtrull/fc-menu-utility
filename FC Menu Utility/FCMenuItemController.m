@@ -74,7 +74,7 @@ static NSString * appSupportPath() {
     NSBundle * settingsBundle = [NSBundle bundleWithPath:appSupportDir];
     
     [[view layoutMenu] removeAllItems];
-    [self updateVersionWithSettingsBundle:settingsBundle];
+    [self addAppVersionToMenu];
     [self updateLauncherWithSettingsBundle:settingsBundle];
     
     if (settingsBundle) {
@@ -83,21 +83,15 @@ static NSString * appSupportPath() {
     }
 }
 
-- (void) updateVersionWithSettingsBundle:(NSBundle *)aBundle {
-    NSString * versionPath = NULL;
-    if (aBundle) {
-        versionPath = [aBundle pathForResource:@"version" ofType:@"txt" inDirectory:SettingsPath];
-    }
-    if (!versionPath) {
-        versionPath = [[NSBundle mainBundle] pathForResource:@"version" ofType:@"txt" inDirectory:SettingsPath];
-    }
+- (void) addAppVersionToMenu {
+    NSString * name = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
+    NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     
-    NSString * version = [NSString stringWithContentsOfFile:versionPath
-                                                   encoding:NSUTF8StringEncoding
-                                                      error:NULL];
-    if (version)
+    if (name && version)
     {
-        [[view layoutMenu] addItemWithTitle:version action:nil keyEquivalent:@""];
+        [[view layoutMenu] addItemWithTitle:[NSString stringWithFormat:@"%@ - v%@", name, version]
+                                     action:nil
+                              keyEquivalent:@""];
         [[view layoutMenu] addItem:[NSMenuItem separatorItem]];
     }
 }
