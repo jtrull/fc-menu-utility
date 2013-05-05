@@ -25,8 +25,32 @@ static NSString * const LauncherPath        = @"Launcher.app";
     [item setTarget:NSApp];
 }
 
-- (void) handleDroppedItems {
-    
+- (void) handleItemsDroppedFromPasteboard:(NSPasteboard *) aPasteboard {
+    if ([[aPasteboard types] containsObject:NSFilenamesPboardType]) {
+        NSString * launcherPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:LauncherPath];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:launcherPath]) {
+            NSAlert * alert = [[NSAlert alloc] init];
+            [alert setMessageText:@"No launcher application configured."];
+            [alert runModal];
+            return;
+        }
+
+        FSRef appRef;
+        FSPathMakeRef((const UInt8 *)[launcherPath fileSystemRepresentation], &appRef, NULL);
+        
+        NSArray * files = [aPasteboard propertyListForType:NSFilenamesPboardType];
+        NSMutableArray * urls = [NSMutableArray arrayWithCapacity:[files count]];
+        for (NSString * path in files) {
+            [urls addObject:[[NSURL alloc] initFileURLWithPath:path]];
+        }
+
+        LSApplicationParameters appParams = {0};
+        appParams.application = &appRef;
+        appParams.flags = kLSLaunchAndDisplayErrors | kLSLaunchAsync | kLSLaunchNewInstance;
+        
+        LSOpenURLsWithRole((__bridge CFArrayRef)(urls),
+                           kLSRolesAll, NULL, &appParams, NULL, 0);
+    }
 }
 
 - (void) addAppVersionToMenu:(NSMenu *) aMenu {

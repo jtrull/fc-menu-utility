@@ -19,8 +19,6 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
 
 @implementation FCMenuItemView
 
-@synthesize menuItemDelegate;
-
 - (id) initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -31,8 +29,10 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
         controlMenu = [[NSMenu alloc] init];
         isStatusItemActive = NO;
 
-        launcherPath = nil;
         statusItem = nil;
+        menuItemDelegate = nil;
+
+        [self registerForDraggedTypes:[NSArray arrayWithObject: NSFilenamesPboardType]];
     }
 
     return self;
@@ -41,6 +41,10 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
 - (void) setStatusItem:(NSStatusItem *) aStatusItem {
     statusItem = aStatusItem;
     [statusItem setView:self];
+}
+
+- (void) setMenuItemDelegate:(FCMenuItemDelegate *) aMenuItemDelegate {
+    menuItemDelegate = aMenuItemDelegate;
 }
 
 - (void) mouseDown:(NSEvent *)event {
@@ -98,19 +102,6 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
                     fraction:1.0];
 }
 
-- (NSString *) launcherPath {
-    return launcherPath;
-}
-
-- (void) setLauncherPath:(NSString *) aLauncherPath {
-    launcherPath = aLauncherPath;
-    if (launcherPath) {
-        [self registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
-    } else {
-        [self unregisterDraggedTypes];
-    }
-}
-
 - (NSDragOperation) draggingEntered:(id<NSDraggingInfo>) sender {
     [self setStatusItemActive];
     
@@ -123,25 +114,7 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
 
 - (BOOL) performDragOperation:(id<NSDraggingInfo>) sender {
     NSPasteboard * pboard = [sender draggingPasteboard];
-    
-    if ([[pboard types] containsObject: NSFilenamesPboardType]) {
-        NSArray * files = [pboard propertyListForType:NSFilenamesPboardType];
-        NSMutableArray * urls = [NSMutableArray arrayWithCapacity:[files count]];
-        for (NSString * path in files) {
-            [urls addObject:[[NSURL alloc] initFileURLWithPath:path]];
-        }
-        
-        FSRef appRef;
-        FSPathMakeRef((const UInt8 *)[launcherPath fileSystemRepresentation], &appRef, NULL);
-
-        LSApplicationParameters appParams = {0};
-        appParams.application = &appRef;
-        appParams.flags = kLSLaunchAndDisplayErrors | kLSLaunchAsync | kLSLaunchNewInstance;
-        
-        LSOpenURLsWithRole((__bridge CFArrayRef)(urls),
-                           kLSRolesAll, NULL, &appParams, NULL, 0);
-    }
-    
+    [menuItemDelegate handleItemsDroppedFromPasteboard:pboard];
     return YES;
 }
 

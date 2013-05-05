@@ -6,6 +6,6 @@
 
 - (void) populateMainMenu:(NSMenu *) aMenu;
 - (void) populateControlMenu:(NSMenu *) aMenu;
-- (void) handleDroppedItems;
+- (void) handleItemsDroppedFromPasteboard:(NSPasteboard *) aPasteboard;
 
 @end
