@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		83163C111711C7BE0004C35E /* fc_menu_icons.icns in Resources */ = {isa = PBXBuildFile; fileRef = 83163C101711C7BE0004C35E /* fc_menu_icons.icns */; };
-		831FDCDE16FE645400AED851 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 831FDCDD16FE645400AED851 /* Sparkle.framework */; };
-		831FDCDF16FE64A000AED851 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 831FDCDD16FE645400AED851 /* Sparkle.framework */; };
 		833B965116B0CA4100C2A017 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833B965016B0CA4100C2A017 /* Cocoa.framework */; };
 		8359014916D30A5D0093F03A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8359013916D30A5D0093F03A /* Credits.rtf */; };
 		8359014A16D30A5D0093F03A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8359013B16D30A5D0093F03A /* InfoPlist.strings */; };
@@ -32,7 +30,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				831FDCDF16FE64A000AED851 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,7 +37,6 @@
 
 /* Begin PBXFileReference section */
 		83163C101711C7BE0004C35E /* fc_menu_icons.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = fc_menu_icons.icns; sourceTree = "<group>"; };
-		831FDCDD16FE645400AED851 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		833B964C16B0CA4100C2A017 /* FC Menu Utility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FC Menu Utility.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		833B965016B0CA4100C2A017 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		833B965316B0CA4100C2A017 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -71,7 +67,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				833B965116B0CA4100C2A017 /* Cocoa.framework in Frameworks */,
-				831FDCDE16FE645400AED851 /* Sparkle.framework in Frameworks */,
 				83E7E8D217360A6B0026046F /* SecurityFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				83E7E8D117360A6B0026046F /* SecurityFoundation.framework */,
-				831FDCDD16FE645400AED851 /* Sparkle.framework */,
 				833B965016B0CA4100C2A017 /* Cocoa.framework */,
 				833B965216B0CA4100C2A017 /* Other Frameworks */,
 			);
