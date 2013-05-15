@@ -104,7 +104,7 @@ static void installLoginItemIfNeeded() {
     [view setMenuItemDelegate:[[FCMenuItemDelegate alloc] init]];
     [view setStatusItem:statusItem];
     
-    installLoginItemIfNeeded();
+//    installLoginItemIfNeeded();
 }
 
 @end

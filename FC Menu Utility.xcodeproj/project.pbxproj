@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		83163C111711C7BE0004C35E /* fc_menu_icons.icns in Resources */ = {isa = PBXBuildFile; fileRef = 83163C101711C7BE0004C35E /* fc_menu_icons.icns */; };
+		8333CAE6174322F700383AD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8333CAE5174322F700383AD7 /* Foundation.framework */; };
+		8333CAE9174322F700383AD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8333CAE8174322F700383AD7 /* main.m */; };
+		8333CAF3174323D500383AD7 /* LoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8333CAF2174323D500383AD7 /* LoginItem.m */; };
+		8333CAF51743268500383AD7 /* manage-login-item in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8333CAE4174322F700383AD7 /* manage-login-item */; };
+		8333CAF91743288400383AD7 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8333CAF81743288400383AD7 /* ApplicationServices.framework */; };
+		8333CAFA1743310C00383AD7 /* SecurityFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E7E8D117360A6B0026046F /* SecurityFoundation.framework */; };
 		833B965116B0CA4100C2A017 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833B965016B0CA4100C2A017 /* Cocoa.framework */; };
 		8359014916D30A5D0093F03A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8359013916D30A5D0093F03A /* Credits.rtf */; };
 		8359014A16D30A5D0093F03A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8359013B16D30A5D0093F03A /* InfoPlist.strings */; };
@@ -81,10 +87,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8333CAF41743266900383AD7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				8333CAF51743268500383AD7 /* manage-login-item in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		83163C101711C7BE0004C35E /* fc_menu_icons.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = fc_menu_icons.icns; sourceTree = "<group>"; };
+		8333CAD3174321E400383AD7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		8333CAE4174322F700383AD7 /* manage-login-item */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "manage-login-item"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8333CAE5174322F700383AD7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8333CAE8174322F700383AD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8333CAEB174322F700383AD7 /* Login Item-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Login Item-Prefix.pch"; sourceTree = "<group>"; };
+		8333CAF11743237E00383AD7 /* LoginItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginItem.h; sourceTree = "<group>"; };
+		8333CAF2174323D500383AD7 /* LoginItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginItem.m; sourceTree = "<group>"; };
+		8333CAF81743288400383AD7 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		833B964C16B0CA4100C2A017 /* FC Menu Utility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FC Menu Utility.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		833B965016B0CA4100C2A017 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		833B965316B0CA4100C2A017 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -111,6 +135,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8333CAE1174322F700383AD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8333CAE6174322F700383AD7 /* Foundation.framework in Frameworks */,
+				8333CAF91743288400383AD7 /* ApplicationServices.framework in Frameworks */,
+				8333CAFA1743310C00383AD7 /* SecurityFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		833B964916B0CA4100C2A017 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,11 +158,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8333CAE7174322F700383AD7 /* Login Item */ = {
+			isa = PBXGroup;
+			children = (
+				8333CAE8174322F700383AD7 /* main.m */,
+				8333CAF11743237E00383AD7 /* LoginItem.h */,
+				8333CAF2174323D500383AD7 /* LoginItem.m */,
+				8333CAEA174322F700383AD7 /* Supporting Files */,
+				8333CAFB1743373B00383AD7 /* Frameworks */,
+			);
+			path = "Login Item";
+			sourceTree = "<group>";
+		};
+		8333CAEA174322F700383AD7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8333CAEB174322F700383AD7 /* Login Item-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8333CAFB1743373B00383AD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8333CAF81743288400383AD7 /* ApplicationServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		833B964116B0CA4100C2A017 = {
 			isa = PBXGroup;
 			children = (
 				8359015116D30A6F0093F03A /* Resources */,
 				8359013716D30A5D0093F03A /* FC Menu Utility */,
+				8333CAE7174322F700383AD7 /* Login Item */,
 				833B964F16B0CA4100C2A017 /* Frameworks */,
 				833B964D16B0CA4100C2A017 /* Products */,
 			);
@@ -138,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				833B964C16B0CA4100C2A017 /* FC Menu Utility.app */,
+				8333CAE4174322F700383AD7 /* manage-login-item */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,6 +212,8 @@
 				83E7E8D317373A430026046F /* Sparkle.xcodeproj */,
 				83E7E8D117360A6B0026046F /* SecurityFoundation.framework */,
 				833B965016B0CA4100C2A017 /* Cocoa.framework */,
+				8333CAD3174321E400383AD7 /* CoreFoundation.framework */,
+				8333CAE5174322F700383AD7 /* Foundation.framework */,
 				833B965216B0CA4100C2A017 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -209,6 +275,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8333CAE3174322F700383AD7 /* Login Item */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8333CAEE174322F700383AD7 /* Build configuration list for PBXNativeTarget "Login Item" */;
+			buildPhases = (
+				8333CAE0174322F700383AD7 /* Sources */,
+				8333CAE1174322F700383AD7 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Login Item";
+			productName = "Login Item";
+			productReference = 8333CAE4174322F700383AD7 /* manage-login-item */;
+			productType = "com.apple.product-type.tool";
+		};
 		833B964B16B0CA4100C2A017 /* FC Menu Utility */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 833B966A16B0CA4200C2A017 /* Build configuration list for PBXNativeTarget "FC Menu Utility" */;
@@ -217,6 +299,7 @@
 				833B964916B0CA4100C2A017 /* Frameworks */,
 				833B964A16B0CA4100C2A017 /* Resources */,
 				831FDCDB16FE1E8B00AED851 /* CopyFiles */,
+				8333CAF41743266900383AD7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -257,6 +340,7 @@
 			projectRoot = "";
 			targets = (
 				833B964B16B0CA4100C2A017 /* FC Menu Utility */,
+				8333CAE3174322F700383AD7 /* Login Item */,
 			);
 		};
 /* End PBXProject section */
@@ -318,6 +402,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8333CAE0174322F700383AD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8333CAE9174322F700383AD7 /* main.m in Sources */,
+				8333CAF3174323D500383AD7 /* LoginItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		833B964816B0CA4100C2A017 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,6 +452,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8333CAEF174322F700383AD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Login Item/Login Item-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "manage-login-item";
+			};
+			name = Debug;
+		};
+		8333CAF0174322F700383AD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Login Item/Login Item-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "manage-login-item";
+			};
+			name = Release;
+		};
 		833B966816B0CA4200C2A017 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -449,6 +578,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8333CAEE174322F700383AD7 /* Build configuration list for PBXNativeTarget "Login Item" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8333CAEF174322F700383AD7 /* Debug */,
+				8333CAF0174322F700383AD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		833B964616B0CA4100C2A017 /* Build configuration list for PBXProject "FC Menu Utility" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
