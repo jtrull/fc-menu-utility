@@ -36,5 +36,7 @@
 	<true/>
 	<key>SUFeedURL</key>
 	<string>http://fcpost.com/apps/menu_utility/appcast.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 </dict>
 </plist>
