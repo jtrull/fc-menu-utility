@@ -20,6 +20,8 @@
 		8359015A16D30A6F0093F03A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8359015416D30A6F0093F03A /* icon.png */; };
 		8359015B16D30A6F0093F03A /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8359015516D30A6F0093F03A /* icon@2x.png */; };
 		839233201777641F00843C35 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8392331F1777641F00843C35 /* dsa_pub.pem */; };
+		839233221777662500843C35 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839233211777662500843C35 /* Sparkle.framework */; };
+		839233231777665F00843C35 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 839233211777662500843C35 /* Sparkle.framework */; };
 		83E7E8D217360A6B0026046F /* SecurityFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E7E8D117360A6B0026046F /* SecurityFoundation.framework */; };
 		83FED5DA17123A5100ABDDFF /* Layout in Resources */ = {isa = PBXBuildFile; fileRef = 83FED5D917123A5100ABDDFF /* Layout */; };
 /* End PBXBuildFile section */
@@ -31,6 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				839233231777665F00843C35 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +68,7 @@
 		8359015416D30A6F0093F03A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		8359015516D30A6F0093F03A /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		8392331F1777641F00843C35 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		839233211777662500843C35 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		83E7E8D117360A6B0026046F /* SecurityFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SecurityFoundation.framework; path = System/Library/Frameworks/SecurityFoundation.framework; sourceTree = SDKROOT; };
 		83FED5D917123A5100ABDDFF /* Layout */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Layout; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +80,7 @@
 			files = (
 				833B965116B0CA4100C2A017 /* Cocoa.framework in Frameworks */,
 				83E7E8D217360A6B0026046F /* SecurityFoundation.framework in Frameworks */,
+				839233221777662500843C35 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +110,7 @@
 			children = (
 				833B965016B0CA4100C2A017 /* Cocoa.framework */,
 				83E7E8D117360A6B0026046F /* SecurityFoundation.framework */,
+				839233211777662500843C35 /* Sparkle.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
