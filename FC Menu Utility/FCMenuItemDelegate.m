@@ -3,6 +3,7 @@
 
 static NSString * const LayoutPath          = @"Layout";
 static NSString * const LauncherPath        = @"Launcher.app";
+static NSString * const UninstallerPath     = @"Uninstaller.app";
 
 @implementation FCMenuItemDelegate
 - (void) populateMainMenu:(NSMenu *) aMenu {
@@ -16,6 +17,13 @@ static NSString * const LauncherPath        = @"Launcher.app";
                                          action:@selector(checkForUpdates:)
                                   keyEquivalent:@""];
     [item setTarget:[SUUpdater sharedUpdater]];
+    
+    [aMenu addItem:[NSMenuItem separatorItem]];
+    
+    item = [aMenu addItemWithTitle:@"Uninstall Menu Utility..."
+                            action:@selector(uninstall)
+                     keyEquivalent:@""];
+    [item setTarget:self];
     
     [aMenu addItem:[NSMenuItem separatorItem]];
     
@@ -137,6 +145,30 @@ static NSString * const LauncherPath        = @"Launcher.app";
 - (void) activateItem:(id)sender {
     NSString * filePath = [sender representedObject];
     [[NSWorkspace sharedWorkspace] openFile:filePath];
+}
+
+- (void) uninstall {
+    NSAlert * alert = [[NSAlert alloc] init];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    [alert setMessageText:@"Uninstall Menu Utility?"];
+    [alert setInformativeText:@"Are you sure you want to uninstall Menu Utility?"];
+    [alert addButtonWithTitle:@"Uninstall"];
+    [alert addButtonWithTitle:@"Cancel"];
+    if ([alert runModal] == NSAlertFirstButtonReturn) {
+        NSURL * uninstallerUrl = [[[NSBundle mainBundle] resourceURL]                                  URLByAppendingPathComponent:UninstallerPath];
+        NSError * error;
+        if (![[NSWorkspace sharedWorkspace] launchApplicationAtURL:uninstallerUrl
+                                                           options:NSWorkspaceLaunchWithoutAddingToRecents
+                                                     configuration:nil
+                                                             error:&error]) {
+            NSString * errorMsg = [NSString stringWithFormat:@"Could not launch the uninstaller. The error was: %@", [error localizedDescription]];
+            alert = [[NSAlert alloc] init];
+            [alert setAlertStyle:NSCriticalAlertStyle];
+            [alert setMessageText:@"Could not uninstall"];
+            [alert setInformativeText:errorMsg];
+            [alert runModal];
+        }
+    }
 }
 
 @end
