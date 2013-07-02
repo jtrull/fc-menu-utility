@@ -1,11 +1,11 @@
-#import "FCMenuItemDelegate.h"
+#import "FCMenuItemController.h"
 #import <Sparkle/Sparkle.h>
 
 static NSString * const LayoutPath          = @"Layout";
 static NSString * const LauncherPath        = @"Launcher.app";
 static NSString * const UninstallerPath     = @"Uninstaller.app";
 
-@implementation FCMenuItemDelegate
+@implementation FCMenuItemController
 - (void) populateMainMenu:(NSMenu *) aMenu {
     [self addAppVersionToMenu:aMenu];
     [self addItemsToMenu:aMenu

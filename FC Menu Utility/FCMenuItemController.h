@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface FCMenuItemDelegate : NSObject
+@interface FCMenuItemController : NSObject
 {
 }
 

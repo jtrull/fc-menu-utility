@@ -30,7 +30,7 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
         isStatusItemActive = NO;
 
         statusItem = nil;
-        menuItemDelegate = nil;
+        menuItemController = nil;
 
         [self registerForDraggedTypes:[NSArray arrayWithObject: NSFilenamesPboardType]];
     }
@@ -43,8 +43,8 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
     [statusItem setView:self];
 }
 
-- (void) setMenuItemDelegate:(FCMenuItemDelegate *) aMenuItemDelegate {
-    menuItemDelegate = aMenuItemDelegate;
+- (void) setMenuItemController:(FCMenuItemController *) aMenuItemController {
+    menuItemController = aMenuItemController;
 }
 
 - (void) mouseDown:(NSEvent *)event {
@@ -60,15 +60,15 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
 }
 
 - (void) popUpLayoutMenu {
-    if (menuItemDelegate && [[layoutMenu itemArray] count] == 0) {
-        [menuItemDelegate populateMainMenu:layoutMenu];
+    if (menuItemController && [[layoutMenu itemArray] count] == 0) {
+        [menuItemController populateMainMenu:layoutMenu];
     }
     [self popUpMenu:layoutMenu];
 }
 
 - (void) popUpControlMenu {
-    if (menuItemDelegate && [[controlMenu itemArray] count] == 0) {
-        [menuItemDelegate populateControlMenu:controlMenu];
+    if (menuItemController && [[controlMenu itemArray] count] == 0) {
+        [menuItemController populateControlMenu:controlMenu];
     }
     [self popUpMenu:controlMenu];
 }
@@ -114,7 +114,7 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
 
 - (BOOL) performDragOperation:(id<NSDraggingInfo>) sender {
     NSPasteboard * pboard = [sender draggingPasteboard];
-    [menuItemDelegate handleItemsDroppedFromPasteboard:pboard];
+    [menuItemController handleItemsDroppedFromPasteboard:pboard];
     return YES;
 }
 

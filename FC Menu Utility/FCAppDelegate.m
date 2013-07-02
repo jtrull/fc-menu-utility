@@ -1,6 +1,6 @@
 #import "FCAppDelegate.h"
 #import "FCMenuItemView.h"
-#import "FCMenuItemDelegate.h"
+#import "FCMenuItemController.h"
 #import <Sparkle/Sparkle.h>
 
 @implementation FCAppDelegate
@@ -11,9 +11,11 @@
 
     NSStatusBar * statusBar = [NSStatusBar systemStatusBar];
     NSStatusItem * statusItem = [statusBar statusItemWithLength:NSSquareStatusItemLength];
-    
+
     FCMenuItemView * view = [[FCMenuItemView alloc] init];
-    [view setMenuItemDelegate:[[FCMenuItemDelegate alloc] init]];
+    FCMenuItemController * menuController = [[FCMenuItemController alloc] init];
+
+    [view setMenuItemController:menuController];
     [view setStatusItem:statusItem];
 }
 
