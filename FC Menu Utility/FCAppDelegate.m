@@ -17,6 +17,15 @@
 
     [view setMenuItemController:menuController];
     [view setStatusItem:statusItem];
+
+    watcher = [[FCFSWatcher alloc] initWithWatchPaths:[menuController layoutPaths]
+                           performingSelectorOnChange:@selector(repopulateMainMenu)
+                                           withObject:menuController];
+    [watcher start];
+}
+
+- (void) applicationWillTerminate:(NSNotification *)notification {
+    [watcher stop];
 }
 
 @end

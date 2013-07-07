@@ -19,6 +19,7 @@
 		8359015916D30A6F0093F03A /* alt-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8359015316D30A6F0093F03A /* alt-icon@2x.png */; };
 		8359015A16D30A6F0093F03A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8359015416D30A6F0093F03A /* icon.png */; };
 		8359015B16D30A6F0093F03A /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8359015516D30A6F0093F03A /* icon@2x.png */; };
+		8386A2181780F5DD00227A9A /* FCFSWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8386A2171780F5DD00227A9A /* FCFSWatcher.m */; };
 		839233201777641F00843C35 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8392331F1777641F00843C35 /* dsa_pub.pem */; };
 		839233221777662500843C35 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839233211777662500843C35 /* Sparkle.framework */; };
 		839233231777665F00843C35 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 839233211777662500843C35 /* Sparkle.framework */; };
@@ -57,6 +58,8 @@
 		8359015316D30A6F0093F03A /* alt-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alt-icon@2x.png"; sourceTree = "<group>"; };
 		8359015416D30A6F0093F03A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		8359015516D30A6F0093F03A /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		8386A2161780F5DD00227A9A /* FCFSWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCFSWatcher.h; sourceTree = "<group>"; };
+		8386A2171780F5DD00227A9A /* FCFSWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCFSWatcher.m; sourceTree = "<group>"; };
 		8392331F1777641F00843C35 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		839233211777662500843C35 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		83FED5D917123A5100ABDDFF /* Layout */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Layout; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 				8359014516D30A5D0093F03A /* main.m */,
 				8359014616D30A5D0093F03A /* FC Menu Utility-Info.plist */,
 				8359014716D30A5D0093F03A /* FC Menu Utility-Prefix.pch */,
+				8386A2161780F5DD00227A9A /* FCFSWatcher.h */,
+				8386A2171780F5DD00227A9A /* FCFSWatcher.m */,
 			);
 			path = "FC Menu Utility";
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				8359014C16D30A5D0093F03A /* FCMenuItemController.m in Sources */,
 				8359014D16D30A5D0093F03A /* FCMenuItemView.m in Sources */,
 				8359014F16D30A5D0093F03A /* main.m in Sources */,
+				8386A2181780F5DD00227A9A /* FCFSWatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

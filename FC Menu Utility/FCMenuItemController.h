@@ -1,11 +1,16 @@
 #import <Foundation/Foundation.h>
 
-@interface FCMenuItemController : NSObject
-{
+@interface FCMenuItemController : NSObject {
+    NSString * appLayoutPath;
+    NSString * localLayoutPath;
+    NSString * userLayoutPath;
 }
 
-- (void) populateMainMenu:(NSMenu *) aMenu;
-- (void) populateControlMenu:(NSMenu *) aMenu;
+@property (readonly) NSMenu * layoutMenu;
+@property (readonly) NSMenu * controlMenu;
+
+- (void) repopulateMainMenu;
+- (NSArray *) layoutPaths;
 - (void) handleItemsDroppedFromPasteboard:(NSPasteboard *) aPasteboard;
 
 @end

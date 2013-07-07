@@ -1,35 +1,69 @@
 #import "FCMenuItemController.h"
 #import <Sparkle/Sparkle.h>
 
-static NSString * const LayoutPath          = @"Layout";
+static NSString * const LayoutFolder        = @"Layout";
 static NSString * const LauncherPath        = @"Launcher.app";
 static NSString * const UninstallerPath     = @"Uninstaller.app";
 
 @implementation FCMenuItemController
-- (void) populateMainMenu:(NSMenu *) aMenu {
-    [self addAppVersionToMenu:aMenu];
-    [self addItemsToMenu:aMenu
-          withLayoutPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:LayoutPath]];
+
+@synthesize layoutMenu;
+@synthesize controlMenu;
+
+- (id) init {
+    self = [super init];
+    
+    if (self) {
+        layoutMenu = [[NSMenu alloc] init];
+        controlMenu = [[NSMenu alloc] init];
+        
+        NSArray * appSupportUrls =
+            [[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory
+                                                   inDomains:NSUserDomainMask | NSLocalDomainMask];
+        NSString * layoutPath = [[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"] stringByAppendingPathComponent:LayoutFolder];
+
+        userLayoutPath = [[[appSupportUrls objectAtIndex:0] path] stringByAppendingPathComponent:layoutPath];
+        localLayoutPath = [[[appSupportUrls objectAtIndex:1] path] stringByAppendingPathComponent:layoutPath];
+        appLayoutPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:LayoutFolder];
+        
+        [self repopulateMainMenu];
+        [self populateControlMenu];
+    }
+    
+    return self;
 }
 
-- (void) populateControlMenu:(NSMenu *) aMenu {
-    NSMenuItem * item = [aMenu addItemWithTitle:@"Check for Updates..."
-                                         action:@selector(checkForUpdates:)
-                                  keyEquivalent:@""];
+- (void) repopulateMainMenu {
+    [layoutMenu removeAllItems];
+    [self addAppVersionToMenu];
+    
+    [self addItemsToMenu:layoutMenu withLayoutPath:appLayoutPath];
+    [self addItemsToMenu:layoutMenu withLayoutPath:localLayoutPath];
+    [self addItemsToMenu:layoutMenu withLayoutPath:userLayoutPath];
+}
+
+- (NSArray *) layoutPaths {
+    return [NSArray arrayWithObjects:appLayoutPath, localLayoutPath, userLayoutPath, nil];
+}
+
+- (void) populateControlMenu {
+    NSMenuItem * item = [controlMenu addItemWithTitle:@"Check for Updates..."
+                                               action:@selector(checkForUpdates:)
+                                        keyEquivalent:@""];
     [item setTarget:[SUUpdater sharedUpdater]];
     
-    [aMenu addItem:[NSMenuItem separatorItem]];
+    [controlMenu addItem:[NSMenuItem separatorItem]];
     
-    item = [aMenu addItemWithTitle:@"Uninstall Menu Utility..."
-                            action:@selector(uninstall)
-                     keyEquivalent:@""];
+    item = [controlMenu addItemWithTitle:@"Uninstall Menu Utility..."
+                                  action:@selector(uninstall)
+                           keyEquivalent:@""];
     [item setTarget:self];
     
-    [aMenu addItem:[NSMenuItem separatorItem]];
+    [controlMenu addItem:[NSMenuItem separatorItem]];
     
-    item = [aMenu addItemWithTitle:@"Quit Menu Utility"
-                            action:@selector(terminate:)
-                     keyEquivalent:@""];
+    item = [controlMenu addItemWithTitle:@"Quit Menu Utility"
+                                  action:@selector(terminate:)
+                           keyEquivalent:@""];
     [item setTarget:NSApp];
 }
 
@@ -61,16 +95,16 @@ static NSString * const UninstallerPath     = @"Uninstaller.app";
     }
 }
 
-- (void) addAppVersionToMenu:(NSMenu *) aMenu {
+- (void) addAppVersionToMenu {
     NSString * name = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
     NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     
     if (name && version)
     {
-        [aMenu addItemWithTitle:[NSString stringWithFormat:@"%@ - v%@", name, version]
-                         action:nil
-                  keyEquivalent:@""];
-        [aMenu addItem:[NSMenuItem separatorItem]];
+        [layoutMenu addItemWithTitle:[NSString stringWithFormat:@"%@ - v%@", name, version]
+                              action:nil
+                       keyEquivalent:@""];
+        [layoutMenu addItem:[NSMenuItem separatorItem]];
     }
 }
 

@@ -60,17 +60,11 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
 }
 
 - (void) popUpLayoutMenu {
-    if (menuItemController && [[layoutMenu itemArray] count] == 0) {
-        [menuItemController populateMainMenu:layoutMenu];
-    }
-    [self popUpMenu:layoutMenu];
+    [self popUpMenu:[menuItemController layoutMenu]];
 }
 
 - (void) popUpControlMenu {
-    if (menuItemController && [[controlMenu itemArray] count] == 0) {
-        [menuItemController populateControlMenu:controlMenu];
-    }
-    [self popUpMenu:controlMenu];
+    [self popUpMenu:[menuItemController controlMenu]];
 }
 
 - (void) popUpMenu:(NSMenu *)aMenu {
