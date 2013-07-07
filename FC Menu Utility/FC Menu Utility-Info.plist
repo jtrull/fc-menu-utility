@@ -38,5 +38,7 @@
 	<string>http://fcpost.com/apps/menu_utility/appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
+	<key>FCDisplayVersion</key>
+	<string>1.0</string>
 </dict>
 </plist>

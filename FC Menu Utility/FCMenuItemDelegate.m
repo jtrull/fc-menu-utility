@@ -63,7 +63,7 @@ static NSString * const UninstallerPath     = @"Uninstaller.app";
 
 - (void) addAppVersionToMenu:(NSMenu *) aMenu {
     NSString * name = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
-    NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"FCDisplayVersion"];
     
     if (name && version)
     {
