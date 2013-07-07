@@ -45,6 +45,8 @@ NSImage * loadImageFromBundle(NSBundle * aBundle, NSString * imageName) {
 
 - (void) setMenuItemDelegate:(FCMenuItemDelegate *) aMenuItemDelegate {
     menuItemDelegate = aMenuItemDelegate;
+    [menuItemDelegate populateMainMenu:layoutMenu];
+    [menuItemDelegate populateControlMenu:controlMenu];
 }
 
 - (void) mouseDown:(NSEvent *)event {
